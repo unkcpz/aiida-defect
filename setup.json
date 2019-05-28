@@ -1,0 +1,56 @@
+{
+    "name": "aiida-defect",
+    "author": "Jason Eu",
+    "author_email": "morty.yu@yahoo.com",
+    "description": "Plugin that making charged defects modeling simpler.",
+    "url": "https://github.com/unkcpz/aiida-defect",
+    "license": "MIT",
+    "classifiers": [
+        "Programming Language :: Python",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: MIT License",
+        "Natural Language :: English",
+        "Framework :: AiiDA"
+    ],
+    "version": "0.1.0a0",
+    "entry_points": {
+        "aiida.data": [
+            "defect = aiida_defect.data:DiffParameters"
+        ],
+        "aiida.calculations": [
+            "defect = aiida_defect.calculations:DiffCalculation"
+        ],
+        "aiida.parsers": [
+            "defect = aiida_defect.parsers:DiffParser"
+        ],
+        "aiida.cmdline.data": [
+            "defect = aiida_defect.cli:data_cli"
+        ]
+    },
+    "include_package_data": true,
+    "setup_requires": ["reentry"],
+    "reentry_register": true,
+    "install_requires": [
+        "aiida-core>=1.0.0b3,<2.0.0",
+        "six",
+        "voluptuous"
+    ],
+    "extras_require": {
+        "testing": [
+            "pgtest==1.2.0",
+            "wheel>=0.31",
+            "coverage",
+            "pytest>=3.6.3,<5.0.0",
+            "pytest-cov>=2.6.1,<5.0.0"
+        ],
+        "pre-commit": [
+            "pre-commit==1.11.0",
+            "yapf==0.27.0",
+            "prospector==0.12.11",
+            "pylint==1.9.4"
+        ],
+        "docs": [
+            "sphinx"
+        ]
+    }
+}
